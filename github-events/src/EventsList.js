@@ -24,7 +24,8 @@ const EventsList = () => {
     const fetchEvents = () => {
       axios.get('http://localhost:5000/webhook/events')
         .then(response => {
-          setEvents(response.data);
+          // Reverse the events to display latest first
+          setEvents(response.data.reverse());
         })
         .catch(error => {
           console.error('There was an error fetching the events!', error);
@@ -34,7 +35,6 @@ const EventsList = () => {
     fetchEvents();
 
     const intervalId = setInterval(fetchEvents, 15000); 
-
 
     return () => clearInterval(intervalId);
   }, []); 
@@ -53,7 +53,14 @@ const EventsList = () => {
             message = `${event.author} merged branch ${event.from_branch} to ${event.to_branch} on ${formatDate(event.timestamp)}`;
           }
           
-          return <li key={index}>{message}</li>;
+          // Calculate serial number in descending order
+          const serialNumber = events.length - index;
+          
+          return (
+            <li key={index}>
+              {serialNumber}. {message}
+            </li>
+          );
         })}
       </ul>
     </div>
