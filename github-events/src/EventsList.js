@@ -1,7 +1,6 @@
-// src/EventsList.js
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import './EventsList.css'; // Create this file for specific styles if needed
+import './EventsList.css'; 
 
 const formatDate = (dateString) => {
   const date = new Date(dateString);
@@ -21,7 +20,7 @@ const EventsList = () => {
   const [events, setEvents] = useState([]);
 
   useEffect(() => {
-    // Function to fetch events from the backend
+    
     const fetchEvents = () => {
       axios.get('http://localhost:5000/webhook/events')
         .then(response => {
@@ -32,15 +31,13 @@ const EventsList = () => {
         });
     };
 
-    // Initial fetch
     fetchEvents();
 
-    // Set up polling every 15 seconds
-    const intervalId = setInterval(fetchEvents, 15000); // 15000ms = 15s
+    const intervalId = setInterval(fetchEvents, 15000); 
 
-    // Clean up the interval on component unmount
+
     return () => clearInterval(intervalId);
-  }, []); // Empty dependency array ensures this runs only once
+  }, []); 
 
   return (
     <div>

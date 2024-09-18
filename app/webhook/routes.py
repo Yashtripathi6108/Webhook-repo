@@ -26,20 +26,20 @@ def receiver():
             pr_id = data['pull_request']['id']
             action = data['action']
             if action == 'closed' and data['pull_request'].get('merged', False):
-                # This is a merge event
+              
                 payload = {
                     'request_id': pr_id,
                     'author': data['pull_request']['user']['login'],
                     'from_branch': data['pull_request']['head']['ref'],
                     'to_branch': data['pull_request']['base']['ref'],
-                    'timestamp': datetime.now(timezone.utc).isoformat() # Format timestamp as requested
+                    'timestamp': datetime.now(timezone.utc).isoformat() 
                 }
                 collection.insert_one({
                     'action': 'merge', **payload
                     # 'message': f'{payload["author"]} merged branch {payload["from_branch"]} to {payload["to_branch"]} on {payload["timestamp"]}'
                 })
             else:
-                # This handles other pull request actions (e.g., opened, closed without merging)
+            
                 payload = {
                     'request_id': pr_id,
                     'author': data['pull_request']['user']['login'],
@@ -55,7 +55,7 @@ def receiver():
             pr_id = data['pull_request']['id']
 
             if action == 'submitted' and data['review']['state'] == 'approved':
-                # Handle review approved event
+               
                 payload = {
                     'request_id': pr_id,
                     'author': data['review']['user']['login'],
