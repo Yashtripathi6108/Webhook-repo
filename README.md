@@ -41,4 +41,16 @@ python run.py
 POST http://127.0.0.1:5000/webhook/receiver
 ```
 
+* Install Local Tunnel:
+
+```bash
+npm install localtunnel
+```
+
+* Use following command to expose local port:
+
+```bash
+lt --port 5000
+```
+
 *******************
