@@ -1,3 +1,4 @@
+/* src/App.css */
 .App {
   text-align: center;
 }
@@ -14,48 +15,14 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #f0f4f8; /* Lighter background for the header */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-/* New Styles for EventsList Component */
-
-.events-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  max-width: 800px; /* Adjust based on your layout needs */
-  width: 100%;
-}
-
-.events-list li {
-  background: #1c1e22; /* Slightly different background for list items */
-  border-radius: 8px;
-  margin: 10px 0;
-  padding: 15px;
-  text-align: left;
-  font-size: 1.2em;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.events-list li:nth-child(odd) {
-  background: #2b2d34; /* Alternate background color for readability */
-}
-
-.events-list h1 {
-  color: #61dafb;
-  font-size: 2em;
-  margin-bottom: 20px;
+  color: #333; /* Darker text color for contrast */
 }
 
 /* Keyframes for animation */

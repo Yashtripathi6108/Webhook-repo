@@ -1,29 +1,33 @@
 /* src/EventsList.css */
 .events-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    max-width: 800px; /* Adjust based on your layout needs */
-    width: 100%;
-  }
-  
-  .events-list li {
-    background: #1c1e22; /* Slightly different background for list items */
-    border-radius: 8px;
-    margin: 10px 0;
-    padding: 15px;
-    text-align: left;
-    font-size: 1.2em;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
-  
-  .events-list li:nth-child(odd) {
-    background: #2b2d34; /* Alternate background color for readability */
-  }
-  
-  .events-list h1 {
-    color: #61dafb;
-    font-size: 2em;
-    margin-bottom: 20px;
-  }
-  
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-width: 800px; /* Adjust based on your layout needs */
+  width: 100%;
+  background: #f9f9f9; /* Light background for the list container */
+  border-radius: 8px; /* Rounded corners for the list container */
+  overflow: hidden; /* Ensure list items don't overflow */
+}
+
+.events-list li {
+  background: #ffffff; /* Light background for list items */
+  border: 1px solid #ddd; /* Light border for definition */
+  border-radius: 8px;
+  margin: 15px 0; /* Increased margin for more space between items */
+  padding: 10px; /* Padding inside the list item */
+  text-align: left;
+  font-size: 0.8em; /* Smaller font size for data */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.events-list li:nth-child(odd) {
+  background: #f1f1f1; /* Slightly different background for alternate items */
+}
+
+.events-list h1 {
+  color: #333; /* Darker color for the header */
+  font-size: 1.8em; /* Reduced font size for the header */
+  margin-bottom: 20px;
+  text-align: center; /* Center-align the header */
+}
